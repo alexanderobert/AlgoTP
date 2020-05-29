@@ -1,0 +1,40 @@
+(5;11) (18;8) (25;7) (50;12) (30;30) (15;15) (20;10) (22;5) (40;20) (45;9)
+ while (curr) {
+            if (curr->priority < priority) {
+                InsertInstead(&curr, value, priority);
+                if (head == curr->right_son) {
+                    head = curr;
+                }
+                if (head == curr->left_son) {
+                    head = curr;
+                }
+                return;
+            }
+            if (compare(value, curr->value)) {
+                if (!curr->left_son) {
+                    curr->left_son = new Node(value, priority);
+                    return;
+                }
+                curr = curr->left_son;
+            } else {
+                if (!curr->right_son) {
+                    curr->right_son = new Node(value, priority);
+                    return;
+                }
+                curr = curr->right_son;
+            }
+        }
+
+20
+1 0
+2 0
+3 0
+4 0
+5 0
+6 0
+7 0
+8 0
+9 0
+10 0
+11 0
+12 0
